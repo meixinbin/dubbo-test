@@ -1,0 +1,22 @@
+dubbo:
+  registry:
+    id: "0001"
+    address: zookeeper://10.0.2.39:2181
+    register: true
+    timeout: 15000
+  application:
+    default: true
+    id: dubbotest
+    name: dubbotest
+    qos-port: ${random.int[1024,65536]}
+    qos-enable: false
+  protocol:
+    port: ${random.int[1024,65536]}
+    serialization: kryo
+    dispatcher: message
+  provider:
+    dispatcher: message
+    threadpool: cached
+    threads: 500
+  consumer:
+    check: false

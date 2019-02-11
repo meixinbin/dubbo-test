@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    show-sql: false
+    properties:
+      hibernate.hbm2ddl.auto: update
+      hibernate.format_sql: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.temp.use_jdbc_metadata_defaults: false
+      hibernate.id.new_generator_mappings: true
+      hibernate.ddl-auto: update
+  application:
+    name: dubbotest
+server:
+  port: 10010
+
+
+dubbo:
+  scan:
+    basePackages: com.meixinbin
